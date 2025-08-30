@@ -13,11 +13,11 @@ jobs: #default run sequentially, can be concurrently
       #running some shell bash command
       run: echo "github ${{github.ref_name}}, $(date),${GITHUB_OUTPUT}"
     # setup the env
-    - run ls -l
+    - run: ls -l
     - id: s02
       uses: actions/setup-node@v4
       with:
         node-version: 24
     - id: s03
       uses: actions/checkout@v5
-    - run ls -l
+    - run: ls -l
