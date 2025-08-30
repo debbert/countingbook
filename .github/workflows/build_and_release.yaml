@@ -21,3 +21,12 @@ jobs: #default run sequentially, can be concurrently
     - id: s03
       uses: actions/checkout@v5
     - run: ls -l
+    - id: s04
+      #install angular cli and install packages from package.json
+      run: npm i -g @angular/cli && npm ci && echo "Installed"
+      #run: echo "faking and arror" && exit 1
+    - id: s05
+      #build the app
+      run: ng build 
+    - id: s06
+      run: ls -l dist/countingbook/browser/
